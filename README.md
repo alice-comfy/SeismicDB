@@ -1,4 +1,4 @@
-# tectonicdb
+# SeismicDB
 
 [![build](https://github.com/0b01/tectonicdb/workflows/Rust/badge.svg)](https://github.com/0b01/tectonicdb/actions?query=workflow%3ARust)
 [![crate.io](https://img.shields.io/crates/v/tdb-core.svg)](https://crates.io/crates/tdb-core)
@@ -13,7 +13,9 @@
 | tdb-server-core  | [![doc.rs](https://docs.rs/tdb_server_core/badge.svg)](https://docs.rs/crate/tdb_server_core) | [![crate.io](https://img.shields.io/crates/v/tdb-server-core.svg)](https://crates.io/crates/tdb-server-core)  |
 | tdb-cli  | [![doc.rs](https://docs.rs/tdb_cli/badge.svg)](https://docs.rs/crate/tdb_cli) | [![crate.io](https://img.shields.io/crates/v/tdb-cli.svg)](https://crates.io/crates/tdb-cli)  |
 
-tectonicdb is a fast, highly compressed standalone database and streaming protocol for order book ticks.
+SeismicDB is a fast, highly compressed standalone database and streaming protocol for order book ticks.
+
+SeismicDB Is forked from the inactive, but briliant TectonicDB. https://github.com/0b01/tectonicdb
 
 ## Why
 
