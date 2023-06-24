@@ -35,7 +35,7 @@ There are several ways to install tectonicdb.
 
 1.  **Binaries**
 
-Binaries are available for [download](https://github.com/0b01/tectonicdb/releases). Make sure to put the path to the binary into your PATH. Currently only build is for Linux x86_64.
+Binaries are available for [download](https://github.com/alice-comfy/SeismicDB/releases). Make sure to put the path to the binary into your PATH. Currently only build is for Linux x86_64.
 
 2.  **Crates**
 
@@ -49,8 +49,8 @@ This command will download `tdb`, `tdb-server`, `dtftools` binaries from crates.
 
 To contribute you will need the copy of the source code on your local machine.
 
-    git clone https://github.com/0b01/tectonicdb
-    cd tectonicdb
+    git clone https://github.com/alice-comfy/SeismicDB
+    cd seismicdb
     cargo build --release
     cargo run --release tdb-server
 
@@ -169,7 +169,7 @@ tdb -b 1000000
 ```
 ## Using dtf files
 
-Tectonic comes with a commandline tool `dtfcat` to inspect the file metadata and all the stored events into either JSON or CSV.
+Seismic comes with a commandline tool `dtfcat` to inspect the file metadata and all the stored events into either JSON or CSV.
 
 Options:
 
