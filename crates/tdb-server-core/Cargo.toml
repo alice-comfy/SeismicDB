@@ -1,9 +1,9 @@
 [package]
 name = "tdb_server_core"
 authors = ["Ricky Han <tectonic@rickyhan.com>"]
-description = "tectonicdb server"
+description = "SeismicDB Server"
 keywords = ["finance", "datastore", "database", "financial", "orderbook"]
-repository = "https://github.com/0b01/tectonicdb"
+repository = "https://github.com/alice-comfy/SeismicDB"
 license = "MIT"
 edition = "2018"
 version = "0.5.1"
