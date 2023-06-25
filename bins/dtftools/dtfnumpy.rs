@@ -31,7 +31,7 @@ pub fn run(matches: &clap::ArgMatches) -> Option<()> {
         let mut it = dtf::file_format::iterators::DTFBufReader::new(rdr);
         let bar = ProgressBar::new(meta.count * 6);
         bar.set_style(ProgressStyle::default_bar()
-            .template("[{elapsed_precise}, remaining: {eta_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
+            .template("[{elapsed_precise}, remaining: {eta_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}").unwrap()
             .progress_chars("##-"));
 
         macro_rules! write_arr {

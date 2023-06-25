@@ -14,7 +14,7 @@ pub fn run(matches: &clap::ArgMatches) {
     let meta = dtf::file_format::read_meta_from_buf(&mut rdr).unwrap();
     let bar = ProgressBar::new(meta.count);
     bar.set_style(ProgressStyle::default_bar()
-        .template("[{elapsed_precise}, remaining: {eta_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
+        .template("[{elapsed_precise}, remaining: {eta_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}").unwrap()
         .progress_chars("##-"));
 
     let mut it = dtf::file_format::iterators::DTFBufReader::new(rdr);
