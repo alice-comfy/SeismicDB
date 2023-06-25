@@ -6,7 +6,7 @@ keywords = ["finance", "datastore", "database", "financial", "orderbook"]
 repository = "https://github.com/alice-comfy/SeismicDB"
 license = "MIT"
 edition = "2018"
-version = "0.5.1"
+version = "0.6.0"
 readme = "../../README.md"
 
 [dependencies]
