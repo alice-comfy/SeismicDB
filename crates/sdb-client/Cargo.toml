@@ -1,6 +1,6 @@
 [package]
-name = "tdb_cli"
-authors = ["Ricky Han <tectonic@rickyhan.com>"]
+name = "sdb_client"
+authors = ["Alice Shinoji <traderalice2011@gmail.com>"]
 description = "client for tectonicdb"
 keywords = ["finance", "datastore", "database", "financial", "orderbook"]
 repository = "https://github.com/0b01/tectonicdb"
@@ -10,7 +10,7 @@ version = "0.6.0"
 readme = "../../README.md"
 
 [dependencies]
-tdb_core = { path = "../tdb-core", version = "0.6.0" }
+sdb_core = { path = "../sdb-core", version = "0.6.0" }
 byteorder = "1.4.3"
 log = "0.4.14"
 bufstream = "0.1.4"

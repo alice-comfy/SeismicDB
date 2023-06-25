@@ -11,9 +11,9 @@ exclude = ["cli/", "test/test-data/bt_btceth.dtf"]
 readme = "README.md"
 
 [[bin]]
-name = "tdb-server"
+name = "sdb-server"
 bench = false
-path = "bins/tdb-server/main.rs"
+path = "bins/sdb-server/main.rs"
 
 [[bin]]
 name = "dtftools"
@@ -21,14 +21,14 @@ bench = false
 path = "bins/dtftools/main.rs"
 
 [[bin]]
-name = "tdb"
+name = "sdb"
 bench = false
-path = "bins/tdb/main.rs"
+path = "bins/sdb/main.rs"
 
 [dependencies]
-tdb_server_core = { path = "crates/tdb-server-core", version = "0.6.0", features = ["influx"] }
-tdb_core = { path = "crates/tdb-core", version = "0.6.0" }
-tdb_cli = { path = "crates/tdb-cli", version = "0.6.0" }
+sdb_server_core = { path = "crates/sdb-server-core", version = "0.6.0", features = ["influx"] }
+sdb_core = { path = "crates/sdb-core", version = "0.6.0" }
+sdb_client = { path = "crates/sdb-client", version = "0.6.0" }
 log = "0.4.14"
 fern = "0.6.0"
 chrono = "0.4.19"

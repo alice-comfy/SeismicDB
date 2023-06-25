@@ -1,4 +1,4 @@
-extern crate tdb_cli;
+extern crate sdb_client;
 extern crate clap;
 extern crate fern;
 extern crate chrono;
@@ -7,7 +7,7 @@ extern crate log;
 extern crate linefeed;
 
 
-use tdb_cli::client::TectonicClient;
+use sdb_client::client::SeismicClient;
 use clap::{App, Arg};
 
 mod interactive;
@@ -33,10 +33,10 @@ fn init_logger() {
 
 fn main() {
     init_logger();
-    let matches = App::new("tectonic-cli")
-        .version("0.0.1")
-        .author("Ricky Han <tectonic@rickyhan.com>")
-        .about("command line client for tectonic financial datastore")
+    let matches = App::new("seismic-client")
+        .version("0.6.0")
+        .author("Alice Shinoji <Traderalice2011@gmail.com>")
+        .about("command line client for seismic financial datastore")
         .arg(
             Arg::with_name("host")
                 .short("h")
@@ -74,7 +74,7 @@ fn main() {
     let host = matches.value_of("host").unwrap_or("0.0.0.0");
     let port = matches.value_of("port").unwrap_or("9001");
 
-    let mut cli = TectonicClient::new(host, port).unwrap();
+    let mut cli = SeismicClient::new(host, port).unwrap();
 
     if matches.is_present("b") {
         let times = matches
@@ -82,7 +82,7 @@ fn main() {
             .unwrap_or("10")
             .parse::<usize>()
             .unwrap_or(10);
-        tdb_cli::benchmark(cli, times);
+        sdb_client::benchmark(cli, times);
     } else if matches.is_present("s") {
         let dbname = matches.value_of("s").unwrap_or("");
         subscribe(cli, dbname);
@@ -109,7 +109,7 @@ fn main() {
 //     }
 // }
 
-fn subscribe(cli: TectonicClient, dbname: &str) {
+fn subscribe(cli: SeismicClient, dbname: &str) {
     println!("Subscribing to {}", dbname);
     for up in cli.subscribe(dbname).unwrap() {
         println!("{:?}", up);

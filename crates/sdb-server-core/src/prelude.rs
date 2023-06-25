@@ -2,12 +2,12 @@ pub use crate::settings::{Settings, key_or_default, key_or_none};
 pub use crate::state::{TectonicServer, Book};
 pub use crate::handler::{ReturnType, Command, Event, Void, ReqCount, GetFormat, ReadLocation};
 pub use crate::utils;
-pub use tdb_core::dtf::{
+pub use sdb_core::dtf::{
     self,
     update::{Update, UpdateVecConvert},
 };
 
-pub use tdb_core::utils::within_range;
+pub use sdb_core::utils::within_range;
 
 pub use std::path::Path;
 pub use std::borrow::{Cow, Borrow};

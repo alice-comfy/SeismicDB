@@ -104,9 +104,9 @@ pub fn parse_to_command(mut line: &[u8]) -> Command {
     use self::Command::*;
 
     if line.last() == Some(&b'\n') { line = &line[..(line.len()-1)]; }
-    let l = tdb_core::RAW_INSERT_PREFIX.len();
-    if line.len() > l && &line[0..l] == tdb_core::RAW_INSERT_PREFIX {
-        return tdb_core::utils::decode_insert_into(line)
+    let l = sdb_core::RAW_INSERT_PREFIX.len();
+    if line.len() > l && &line[0..l] == sdb_core::RAW_INSERT_PREFIX {
+        return sdb_core::utils::decode_insert_into(line)
             .map(|(up, book_name)| Command::Insert(up, book_name))
             .unwrap_or(Command::BadFormat);
     }
@@ -257,7 +257,7 @@ mod tests {
         // "ADD [update] INTO bnc_btc_eth"
         let book_name = Some("bnc_btc_eth");
         let update = Update { ts: 1513922718770, seq: 0, is_bid: true, is_trade: false, price: 0.001939,  size: 22.85 };
-        let cmd = tdb_core::utils::encode_insert_into(book_name, &update).unwrap();
+        let cmd = sdb_core::utils::encode_insert_into(book_name, &update).unwrap();
 
         let resp = task::block_on(state.process_command(parse_to_command(&cmd), addr));
         assert_eq!(ReturnType::String("".into()), resp);

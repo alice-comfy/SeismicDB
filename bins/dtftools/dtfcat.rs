@@ -1,6 +1,6 @@
 use memmap::MmapOptions;
-use tdb_core::dtf::{self, file_format as ff};
-use tdb_core::postprocessing::candle::time_bars::TimeBars;
+use sdb_core::dtf::{self, file_format as ff};
+use sdb_core::postprocessing::candle::time_bars::TimeBars;
 use std::fs::File;
 use indicatif::{ProgressBar, ProgressStyle};
 
@@ -85,10 +85,10 @@ pub fn run(matches: &clap::ArgMatches) {
     } else {
         if print_metadata {
             println!("total updates in folder: {}",
-                tdb_core::storage::utils::print_total_folder_updates_len(folder).unwrap());
+                sdb_core::storage::utils::print_total_folder_updates_len(folder).unwrap());
         } else {
             if timebars {
-                let ups = tdb_core::dtf::file_format::scan_files_for_range(
+                let ups = sdb_core::dtf::file_format::scan_files_for_range(
                     folder,
                     symbol,
                     min,
@@ -103,7 +103,7 @@ pub fn run(matches: &clap::ArgMatches) {
                 println!("{}", rebinned)
             } else {
                 let mut ret = vec![];
-                tdb_core::dtf::file_format::scan_files_for_range_for_each(
+                sdb_core::dtf::file_format::scan_files_for_range_for_each(
                     &folder,
                     &symbol,
                     min,

@@ -1,9 +1,9 @@
 [package]
-name = "tdb_core"
-authors = ["Ricky Han <tectonic@rickyhan.com>"]
+name = "sdb_core"
+authors = ["Alice Shinoji <traderalice2011@gmail.com>"]
 description = "market data server for contiguous order book ticks"
 keywords = ["finance", "datastore", "database", "financial", "orderbook"]
-repository = "https://github.com/0b01/tectonicdb"
+repository = "https://github.com/alice-comfy/seismicdb"
 license = "MIT"
 edition = "2021"
 version = "0.6.0"
@@ -11,9 +11,9 @@ readme = "../../README.md"
 
 [dependencies]
 csv = "1.1.6"
-bitflags = "1.3.2"
+bitflags = "2.3.2"
 byteorder = "1.4.3"
-indexmap = "1.7.0"
+indexmap = {version="2.0.0", features=["serde"]}
 
 chrono = "0.4.19"
 fern = "0.6.0"
@@ -31,7 +31,7 @@ lazy_static = "1.4.0"
 
 [dependencies.uuid]
 features = ["serde", "v4"]
-version = "0.8.2"
+version = "1.3.4"
 
 [features]
 default = []

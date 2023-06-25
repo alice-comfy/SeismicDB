@@ -3,8 +3,8 @@
 
 use std::collections::HashSet;
 use std::process::exit;
-use tdb_core::dtf::{self, update::Update};
-use tdb_core::dtf::file_format::Metadata;
+use sdb_core::dtf::{self, update::Update};
+use sdb_core::dtf::file_format::Metadata;
 
 const USAGE: &'static str = "Usage: `dtfconcat input1 input2 output`";
 const DTF_ERROR: &'static str = "Unable to parse input DTF file!";

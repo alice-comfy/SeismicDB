@@ -1,17 +1,17 @@
 extern crate byteorder;
 extern crate serde;
 extern crate serde_json;
-extern crate tdb_core;
+extern crate sdb_core;
 #[macro_use] extern crate log;
 
 pub mod error;
 pub mod client;
 
 use std::env;
-use crate::client::TectonicClient;
-use crate::error::TectonicError;
+use crate::client::SeismicClient;
+use crate::error::SeismicError;
 use std::time::SystemTime;
-use tdb_core::dtf::update::Update;
+use sdb_core::dtf::update::Update;
 
 fn key_or_default(key: &str, default: &str) -> String {
    match env::var(key) {
@@ -20,31 +20,31 @@ fn key_or_default(key: &str, default: &str) -> String {
     }
 }
 
-fn get_tectonic_conf_from_env() -> (String, String) {
-    let tectonic_hostname: String = key_or_default("TDB_HOSTNAME", "localhost");
-    let tectonic_port: String     = key_or_default("TDB_PORT", "9001");
+fn get_seismic_conf_from_env() -> (String, String) {
+    let seismic_hostname: String = key_or_default("SDB_HOSTNAME", "localhost");
+    let seismic_port: String     = key_or_default("SDB_PORT", "9001");
 
-    (tectonic_hostname, tectonic_port)
+    (seismic_hostname, seismic_port)
 }
 
-/// Creates a new connection to TectonicDB, using configuration values from environment
+/// Creates a new connection to SeismicDB, using configuration values from environment
 /// or defaults to localhost:9001 if none are set.
 ///
-/// "TDB_HOSTNAME", "localhost");
-/// "TDB_PORT", "9001");
+/// "SDB_HOSTNAME", "localhost");
+/// "SDB_PORT", "9001");
 ///
-pub fn client_from_env() -> TectonicClient {
-    let (tectonic_hostname, tectonic_port) = get_tectonic_conf_from_env();
-    match TectonicClient::new(&tectonic_hostname, &tectonic_port) {
+pub fn client_from_env() -> SeismicClient {
+    let (seismic_hostname, seismic_port) = get_seismic_conf_from_env();
+    match SeismicClient::new(&seismic_hostname, &seismic_port) {
         Ok(cli) => cli,
-        Err(TectonicError::ConnectionError) => {
+        Err(SeismicError::ConnectionError) => {
             panic!("DB cannot be connected!");
         },
         _ => unreachable!(),
     }
 }
 
-pub fn benchmark(mut cli: TectonicClient, times: usize) {
+pub fn benchmark(mut cli: SeismicClient, times: usize) {
 
     let mut t = SystemTime::now();
 

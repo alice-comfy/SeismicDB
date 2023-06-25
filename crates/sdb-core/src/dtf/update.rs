@@ -203,7 +203,7 @@ bitflags! {
 impl Flags {
     /// convert to bool
     pub fn to_bool(&self) -> bool {
-        (self.bits == 0b0000_0001) || (self.bits == 0b0000_0010)
+        (self.bits() == 0b0000_0001) || (self.bits() == 0b0000_0010)
     }
 }
 

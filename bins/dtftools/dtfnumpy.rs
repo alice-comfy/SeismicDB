@@ -7,7 +7,7 @@ use std::fs::File;
 
 use memmap::MmapOptions;
 
-use tdb_core::dtf;
+use sdb_core::dtf;
 use indicatif::{ProgressBar, ProgressStyle};
 
 pub fn run(matches: &clap::ArgMatches) -> Option<()> {

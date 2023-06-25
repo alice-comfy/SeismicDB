@@ -1,6 +1,6 @@
 use crate::prelude::*;
-use tdb_core::utils;
-use tdb_core::dtf::update::Update;
+use sdb_core::utils;
+use sdb_core::dtf::update::Update;
 
 
 /// Parses a line that looks like
@@ -33,7 +33,7 @@ pub fn parse_line(string: &str) -> Option<Update> {
             match count {
                 0 => {
                     u.ts = match buf.parse::<u64>() {
-                        Ok(ts) => utils::fill_digits(ts),
+                        Ok(ts) => sdb_core::utils::fill_digits(ts),
                         Err(_) => return None,
                     }
                 }

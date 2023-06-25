@@ -4,7 +4,7 @@ use std::thread;
 use std::time::Duration;
 use std::error::Error;
 
-use tdb_cli::client::TectonicClient;
+use sdb_client::client::SeismicClient;
 
 use linefeed::{Interface, Prompter, ReadResult};
 use linefeed::chars::escape_sequence;
@@ -13,19 +13,19 @@ use linefeed::complete::{Completer, Completion};
 use linefeed::inputrc::parse_text;
 use linefeed::terminal::Terminal;
 
-const HISTORY_FILE: &str = "tdb.hst";
+const HISTORY_FILE: &str = "sdb.hst";
 
-pub fn run(cli: &mut TectonicClient) -> io::Result<()> {
+pub fn run(cli: &mut SeismicClient) -> io::Result<()> {
     let interface = Arc::new(Interface::new("demo")?);
     let mut thread_id = 0;
 
-    println!("tdb cli");
+    println!("sdb cli");
     println!("Enter \"help\" for a list of commands.");
     println!("Press Ctrl-D or enter \"quit\" to exit.");
     println!("");
 
     interface.set_completer(Arc::new(DemoCompleter));
-    interface.set_prompt("tdb> ")?;
+    interface.set_prompt("sdb> ")?;
 
     if let Err(e) = interface.load_history(HISTORY_FILE) {
         if e.kind() == io::ErrorKind::NotFound {

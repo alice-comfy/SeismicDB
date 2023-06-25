@@ -1,7 +1,7 @@
 extern crate itertools;
 extern crate clap;
 extern crate byteorder;
-extern crate tdb_core;
+extern crate sdb_core;
 #[macro_use]
 extern crate indoc;
 
@@ -17,7 +17,7 @@ use clap::{Arg, App};
 fn main() {
     let matches = App::new("dtftools")
         .version("1.0.0")
-        .author("Ricky Han <tectonic@rickyhan.com>")
+        .author("Alice Shinoji <traderalice2011@gmail.com")
         .about("tools for dtf files")
 
         .subcommand(clap::SubCommand::with_name("cat")
