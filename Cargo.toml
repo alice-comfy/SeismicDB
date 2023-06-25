@@ -6,7 +6,7 @@ keywords = ["finance", "datastore", "database", "financial", "orderbook"]
 repository = "https://github.com/alice-comfy/SeismicDB"
 license = "MIT"
 edition = "2021"
-version = "0.6.0" #INDEV
+version = "0.6.1" #INDEV
 exclude = ["cli/", "test/test-data/bt_btceth.dtf", "publish.sh"]
 readme = "README.md"
 
