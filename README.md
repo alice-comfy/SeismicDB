@@ -1,7 +1,7 @@
 # SeismicDB
 [![Rust](https://github.com/alice-comfy/SeismicDB/actions/workflows/rust.yml/badge.svg)](https://github.com/alice-comfy/SeismicDB/actions/workflows/rust.yml)
-[![crate.io](https://img.shields.io/crates/v/tdb-core.svg)](https://crates.io/crates/tdb-core)
-[![doc.rs](https://docs.rs/tdb_core/badge.svg)](https://docs.rs/crate/tdb_core)
+[![crate.io](https://img.shields.io/crates/v/sdb-core.svg)](https://crates.io/crates/sdb-core)
+[![doc.rs](https://docs.rs/sdb_core/badge.svg)](https://docs.rs/crate/sdb_core)
 ![Minimum Rust version](https://img.shields.io/badge/rustc-1.40+-yellow.svg)
 ![Rust stable](https://img.shields.io/badge/rust-stable-green.svg)
 
@@ -10,7 +10,7 @@
 | seismicdb  | [![doc.rs](https://docs.rs/tectonicdb/badge.svg)](https://docs.rs/crate/tectonicdb) | [![crate.io](https://img.shields.io/crates/v/seismicdb.svg)](https://crates.io/crates/seismicdb)  |
 | sdb-core  | [![doc.rs](https://docs.rs/tdb_core/badge.svg)](https://docs.rs/crate/tdb_core) | [![crate.io](https://img.shields.io/crates/v/sdb-core.svg)](https://crates.io/crates/sdb-core)  |
 | sdb-server-core  | [![doc.rs](https://docs.rs/tdb_server_core/badge.svg)](https://docs.rs/crate/tdb_server_core) | [![crate.io](https://img.shields.io/crates/v/sdb-server-core.svg)](https://crates.io/crates/sdb-server-core)  |
-| sdb-cli  | [![doc.rs](https://docs.rs/tdb_cli/badge.svg)](https://docs.rs/crate/tdb_cli) | [![crate.io](https://img.shields.io/crates/v/sdb-cli.svg)](https://crates.io/crates/sdb-cli)  |
+| sdb-cli  | [![doc.rs](https://docs.rs/tdb_cli/badge.svg)](https://docs.rs/crate/sdb_client) | [![crate.io](https://img.shields.io/crates/v/sdb-client.svg)](https://crates.io/crates/sdb-client)  |
 
 SeismicDB is a fast, highly compressed standalone database and streaming protocol for order book ticks.
 
