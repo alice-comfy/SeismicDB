@@ -1,7 +1,7 @@
 [package]
-name = "tectonicdb"
-authors = ["Ricky Han <tectonic@rickyhan.com>"]
-description = "tectonicdb server"
+name = "seismicdb"
+authors = ["Alice Shinjoi <traderalice2011@gmail.com>"]
+description = "SeismicDB - Efficient compressed level 2 & tick data storage."
 keywords = ["finance", "datastore", "database", "financial", "orderbook"]
 repository = "https://github.com/0b01/tectonicdb"
 license = "MIT"

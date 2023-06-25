@@ -2054,6 +2054,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "seismicdb"
+version = "0.5.2"
+dependencies = [
+ "byteorder",
+ "chrono",
+ "clap",
+ "fern",
+ "indicatif",
+ "indoc",
+ "itertools",
+ "linefeed",
+ "log",
+ "memmap",
+ "openssl-probe",
+ "serde 1.0.130",
+ "serde_derive",
+ "serde_json",
+ "tdb_cli",
+ "tdb_core",
+ "tdb_server_core",
+ "zip",
+]
+
+[[package]]
 name = "semver"
 version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2387,30 +2411,6 @@ dependencies = [
  "tempdir",
  "time 0.3.4",
  "uuid",
-]
-
-[[package]]
-name = "tectonicdb"
-version = "0.5.2"
-dependencies = [
- "byteorder",
- "chrono",
- "clap",
- "fern",
- "indicatif",
- "indoc",
- "itertools",
- "linefeed",
- "log",
- "memmap",
- "openssl-probe",
- "serde 1.0.130",
- "serde_derive",
- "serde_json",
- "tdb_cli",
- "tdb_core",
- "tdb_server_core",
- "zip",
 ]
 
 [[package]]
