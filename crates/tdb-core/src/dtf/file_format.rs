@@ -1226,7 +1226,7 @@ mod tests {
             size: 0.,
         };
         let mut bytes = vec![];
-        write_batches(&mut bytes, [up].into_iter().peekable()).unwrap();
+        write_batches(&mut bytes, [up].iter().peekable()).unwrap();
         assert_eq!(
             vec![
                 1,

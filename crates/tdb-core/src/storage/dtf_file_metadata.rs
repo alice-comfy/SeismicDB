@@ -119,7 +119,7 @@ fn dtf_metadata_tags_parsing() {
         .collect();
 
     let expected: Vec<String> = ["foo", "bar", "key:value", "test2"]
-        .into_iter()
+        .iter()
         .map(|s| String::from(*s))
         .collect();
 
