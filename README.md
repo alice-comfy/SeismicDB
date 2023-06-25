@@ -1,6 +1,5 @@
 # SeismicDB
-
-[![build](https://github.com/0b01/tectonicdb/workflows/Rust/badge.svg)](https://github.com/0b01/tectonicdb/actions?query=workflow%3ARust)
+[![Rust](https://github.com/alice-comfy/SeismicDB/actions/workflows/rust.yml/badge.svg)](https://github.com/alice-comfy/SeismicDB/actions/workflows/rust.yml)
 [![crate.io](https://img.shields.io/crates/v/tdb-core.svg)](https://crates.io/crates/tdb-core)
 [![doc.rs](https://docs.rs/tdb_core/badge.svg)](https://docs.rs/crate/tdb_core)
 ![Minimum Rust version](https://img.shields.io/badge/rustc-1.40+-yellow.svg)
@@ -31,7 +30,7 @@ SeismicDB Is forked from the inactive, but briliant TectonicDB. https://github.c
 
 ## Installation
 
-There are several ways to install tectonicdb.
+There are several ways to install seismicdb.
 
 1.  **Binaries**
 
@@ -40,10 +39,10 @@ Binaries are available for [download](https://github.com/alice-comfy/SeismicDB/r
 2.  **Crates**
 
 ```
-cargo install tectonicdb
+cargo install seismicdb
 ```
 
-This command will download `tdb`, `tdb-server`, `dtftools` binaries from crates.io and build locally.
+This command will download `sdb`, `sdb-server`, `dtftools` binaries from crates.io and build locally.
 
 3.  **GitHub**
 
@@ -52,7 +51,7 @@ To contribute you will need the copy of the source code on your local machine.
     git clone https://github.com/alice-comfy/SeismicDB
     cd seismicdb
     cargo build --release
-    cargo run --release tdb-server
+    cargo run --release sdb-server
 
 The binaries can be found under `target/release`.
 
@@ -61,13 +60,13 @@ The binaries can be found under `target/release`.
 It's very easy to setup.
 
 ```
-./tdb-server --help
+./sdb-server --help
 ```
 
 For example:
 
 ```bash
-./tdb-server -vv -a -i 10000
+./sdb-server -vv -a -i 10000
 # run the server on INFO verbosity
 # turn on autoflush for every 10000 inserts per orderbook
 ```
@@ -78,14 +77,14 @@ To config the Google Cloud Storage and Data Collection Backend integration, the 
 
 | Variable Name                 | Default      | Description                                                                                                                                   |
 | ----------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `TDB_HOST`             | 0.0.0.0      | The host to which the database will bind                                                                                                      |
-| `TDB_PORT`             | 9001         | The port that the database will listen on                                                                                                     |
-| `TDB_DTF_FOLDER`       | db           | Name of the directory in which DTF files will be stored                                                                                       |
-| `TDB_AUTOFLUSH`        | false        | If `true`, recorded orderbook data will automatically be flushed to DTF files every `interval` inserts.                                       |
-| `TDB_FLUSH_INTERVAL`   | 1000         | Every `interval` inserts, if `autoflush` is enabled, DTF files will be written from memory to disk.                                           |
-| `TDB_GRANULARITY`      | 0            | Record history granularity level                                                                                                              |
-| `TDB_LOG_FILE_NAME`    | tdb.log      | Filename of the log file for the database                                                                                                     |
-| `TDB_Q_CAPACITY`       | 300          | Capacity of the circular queue for recording history                                                                                          |
+| `SDB_HOST`             | 0.0.0.0      | The host to which the database will bind                                                                                                      |
+| `SDB_PORT`             | 9001         | The port that the database will listen on                                                                                                     |
+| `SDB_DTF_FOLDER`       | db           | Name of the directory in which DTF files will be stored                                                                                       |
+| `SDB_AUTOFLUSH`        | false        | If `true`, recorded orderbook data will automatically be flushed to DTF files every `interval` inserts.                                       |
+| `SDB_FLUSH_INTERVAL`   | 1000         | Every `interval` inserts, if `autoflush` is enabled, DTF files will be written from memory to disk.                                           |
+| `SDB_GRANULARITY`      | 0            | Record history granularity level                                                                                                              |
+| `SDB_LOG_FILE_NAME`    | sdb.log      | Filename of the log file for the database                                                                                                     |
+| `SDB_Q_CAPACITY`       | 300          | Capacity of the circular queue for recording history                                                                                          |
 
 ## Client API
 
@@ -135,7 +134,7 @@ As a concrete example,
 $ influx
 > CREATE DATABASE market_data;
 > ^D
-$ tdb --influx-db market_data --influx-host http://localhost:8086 --influx-log-interval 20
+$ sdb --influx-db market_data --influx-host http://localhost:8086 --influx-log-interval 20
 ...
 ```
 
@@ -149,7 +148,7 @@ Additionally, you can query usage information directly with `INFO` and `PERF` co
 
 ## Logging
 
-Log file defaults to `tdb.log`.
+Log file defaults to `sdb.log`.
 
 ## Testing
 
@@ -162,10 +161,10 @@ Tests must be run sequentially because some tests depend on dtf files that other
 
 ## Benchmark
 
-tdb client comes with a benchmark mode. This command inserts 1M records into the tdb.
+sdb client comes with a benchmark mode. This command inserts 1M records into the sdb.
 
 ```bash
-tdb -b 1000000
+sdb -b 1000000
 ```
 ## Using dtf files
 
@@ -221,6 +220,7 @@ Language bindings:
 
 # Changelog
 
+* 0.6.0: First seismicDB Fork release. Upgraded dependencies and rust version to 2021 / latest versions. Rebrand and release new version on crates.io. 
 * 0.5.0: InfluxDB monitoring plugin and improved command line arguments
 * 0.4.0: iterator-based APIs for handling DTF files and various quality of life improvements
 * 0.3.0: Refactor to async
