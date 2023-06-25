@@ -2352,7 +2352,7 @@ dependencies = [
 
 [[package]]
 name = "tdb_cli"
-version = "0.5.1"
+version = "0.6.0"
 dependencies = [
  "bufstream",
  "byteorder",
@@ -2365,7 +2365,7 @@ dependencies = [
 
 [[package]]
 name = "tdb_core"
-version = "0.5.2"
+version = "0.6.0"
 dependencies = [
  "alloc_counter",
  "arrayvec 0.7.1",
@@ -2386,7 +2386,7 @@ dependencies = [
 
 [[package]]
 name = "tdb_server_core"
-version = "0.5.1"
+version = "0.6.0"
 dependencies = [
  "alloc_counter",
  "arrayvec 0.7.1",

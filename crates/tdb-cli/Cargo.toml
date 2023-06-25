@@ -10,7 +10,7 @@ version = "0.6.0"
 readme = "../../README.md"
 
 [dependencies]
-tdb_core = { path = "../tdb-core", version = "0.5.1" }
+tdb_core = { path = "../tdb-core", version = "0.6.0" }
 byteorder = "1.4.3"
 log = "0.4.14"
 bufstream = "0.1.4"
