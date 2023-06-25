@@ -7,10 +7,10 @@
 
 | crate | docs.rs | crate.io |
 | - | - | ------ |
-| seismicdb  | [![doc.rs](https://docs.rs/tectonicdb/badge.svg)](https://docs.rs/crate/tectonicdb) | [![crate.io](https://img.shields.io/crates/v/seismicdb.svg)](https://crates.io/crates/seismicdb)  |
-| sdb-core  | [![doc.rs](https://docs.rs/tdb_core/badge.svg)](https://docs.rs/crate/tdb_core) | [![crate.io](https://img.shields.io/crates/v/sdb-core.svg)](https://crates.io/crates/sdb-core)  |
-| sdb-server-core  | [![doc.rs](https://docs.rs/tdb_server_core/badge.svg)](https://docs.rs/crate/tdb_server_core) | [![crate.io](https://img.shields.io/crates/v/sdb-server-core.svg)](https://crates.io/crates/sdb-server-core)  |
-| sdb-cli  | [![doc.rs](https://docs.rs/tdb_cli/badge.svg)](https://docs.rs/crate/sdb_client) | [![crate.io](https://img.shields.io/crates/v/sdb-client.svg)](https://crates.io/crates/sdb-client)  |
+| seismicdb  | [![doc.rs](https://docs.rs/seismicdb/badge.svg)](https://docs.rs/crate/seismicdb) | [![crate.io](https://img.shields.io/crates/v/seismicdb.svg)](https://crates.io/crates/seismicdb)  |
+| sdb-core  | [![doc.rs](https://docs.rs/sdb_core/badge.svg)](https://docs.rs/crate/sdb_core) | [![crate.io](https://img.shields.io/crates/v/sdb-core.svg)](https://crates.io/crates/sdb-core)  |
+| sdb-server-core  | [![doc.rs](https://docs.rs/sdb_server_core/badge.svg)](https://docs.rs/crate/sdb_server_core) | [![crate.io](https://img.shields.io/crates/v/sdb-server-core.svg)](https://crates.io/crates/sdb-server-core)  |
+| sdb-cli  | [![doc.rs](https://docs.rs/sdb_client/badge.svg)](https://docs.rs/crate/sdb_client) | [![crate.io](https://img.shields.io/crates/v/sdb-client.svg)](https://crates.io/crates/sdb-client)  |
 
 SeismicDB is a fast, highly compressed standalone database and streaming protocol for order book ticks.
 
