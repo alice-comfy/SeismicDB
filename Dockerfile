@@ -12,22 +12,22 @@ RUN curl https://sh.rustup.rs -sSf | \
     rustup target add x86_64-unknown-linux-musl
 
 # Build the `tdb-server` application.
-RUN cargo build --bin tdb-server --release
+RUN cargo build --bin sdb-server --release
 
 # Build the `tdb` application.
-RUN cargo build --bin tdb --release
+RUN cargo build --bin sdb --release
 
 # Now, we need to build the _real_ Docker container, copying in `tdb-server`
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates && update-ca-certificates
-ENV IMAGE_NAME=tectonicdb
+ENV IMAGE_NAME=seismicdb
 COPY --from=builder \
-    /home/rust/src/target/x86_64-unknown-linux-musl/release/tdb-server \
+    /home/rust/src/target/x86_64-unknown-linux-musl/release/sdb-server \
     /usr/local/bin/
 
 COPY --from=builder \
-    /home/rust/src/target/x86_64-unknown-linux-musl/release/tdb \
+    /home/rust/src/target/x86_64-unknown-linux-musl/release/sdb \
     /usr/local/bin/
 
 # Initialize the application
-CMD /usr/local/bin/tdb-server -vv
+CMD /usr/local/bin/sdb-server -vv

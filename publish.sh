@@ -1,14 +1,14 @@
 pushd crates
 
-pushd tdb-core
+pushd sdb-core
 cargo publish --allow-dirty
 popd
 
-pushd tdb-server-core
+pushd sdb-server-core
 cargo publish --allow-dirty
 popd
 
-pushd tdb-cli
+pushd sdb-cli
 cargo publish --allow-dirty
 popd
 
