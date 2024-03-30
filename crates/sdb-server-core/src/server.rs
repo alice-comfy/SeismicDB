@@ -3,6 +3,8 @@ use byteorder::{BigEndian, ReadBytesExt};
 use async_std::future;
 
 const IGNORE_TCP_WRITE: bool = true;
+//major change: Seismic should now create a DB for unknowns, this is the beginning of several changes designed to make Seismic DB more appropriate for stock market firehose data.
+pub const CREATE_MISSING_DB:bool = true;
 
 // TODO: add onexit once async-std support is stablized
 #[cfg(unix)]

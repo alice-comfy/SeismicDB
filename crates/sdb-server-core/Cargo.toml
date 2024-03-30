@@ -13,7 +13,7 @@ readme = "../../README.md"
 sdb_core = { path = "../sdb-core", version = "0.6.0" }
 circular-queue = "0.2.4"
 
-async-std = "1.5.0"
+async-std = "1.12.0"
 futures = "0.3.5"
 ctrlc = "3.1.4"
 byteorder = "1.3.4"
@@ -24,7 +24,7 @@ serde_json = "1.0.53"
 log = "0.4.8"
 clap = "4.3.8"
 fern = "0.6.0"
-chrono = "0.4.11"
+chrono = "0.4.37"
 
 openssl-probe = "0.1.2"
 lazy_static = "1.4.0"

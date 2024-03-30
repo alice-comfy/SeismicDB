@@ -270,9 +270,18 @@ impl TectonicServer {
                 let book_name = book_name
                     .map(|i| Arc::new(i))
                     .unwrap_or_else(|| Arc::clone(&self.conn(addr).unwrap().book_entry));
-                match self.insert(up, &book_name).await {
+                match self.insert(up.clone(), &book_name).await {
                     Some(()) => ReturnType::string(""),
-                    None => ReturnType::missing_db(&book_name),
+
+                    None => {match crate::server::CREATE_MISSING_DB {
+                        false => ReturnType::missing_db(&book_name),
+                        true => {
+                            self.create(&book_name);
+                            self.insert(up, &book_name).await;
+                            ReturnType::string("")
+                        }
+
+                    }},
                 }
             }
             Insert(None, _) => ReturnType::error("Unable to parse line"),
