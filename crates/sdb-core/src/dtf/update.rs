@@ -192,18 +192,18 @@ bitflags! {
     /// tightly packed bitflag representation of boolean values in the update struct
     pub struct Flags: u8 {
         /// empty
-        const FLAG_EMPTY   = 0b0000_0000;
+        const FLAG_EMPTY   = 0;
         /// update.is_bid
-        const FLAG_IS_BID   = 0b0000_0001;
+        const FLAG_IS_BID   = 1;
         /// update.is_trade
-        const FLAG_IS_TRADE = 0b0000_0010;
+        const FLAG_IS_TRADE = 2;
     }
 }
 
 impl Flags {
     /// convert to bool
     pub fn to_bool(&self) -> bool {
-        (self.bits() == 0b0000_0001) || (self.bits() == 0b0000_0010)
+        (self.bits() == 1) || (self.bits() == 2)
     }
 }
 
